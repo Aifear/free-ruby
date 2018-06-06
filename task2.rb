@@ -20,8 +20,12 @@ upper = ("A".."Z").to_a
 for i in (0...length)
 	if lower.index(input_string[i])
 		result += swap(input_string[i], step, lower)
-	else
+
+	elsif upper.index(input_string[i])
 		result += swap(input_string[i], step, upper)
+		
+	else
+		result += input_string[i]
 	end
 end
 
