@@ -1,35 +1,54 @@
 #Сложение временных промежутков
 
+def hour(hours)
+	case hours
+		when 1
+			return (hours.to_s + " час ")
+		when 2,3,4
+			return (hours.to_s + " часа ")
+		else
+			return (hours.to_s + " часов ")
+		end
+end
+
+def min(minutes)
+	case minutes
+		when 1
+			return (minutes.to_s + " минута ")
+		when 2,3,4
+			return (minutes.to_s + " минуты ")
+		else
+			return (minutes.to_s + " минут ")
+		end
+end
+
+def sec(seconds)
+	case seconds
+		when 1
+			return (seconds.to_s + " секунда ")
+		when 2,3,4
+			return (seconds.to_s + " секунды ")
+		else
+			return (seconds.to_s + " секунд ")
+		end
+end
+
+
 #Пользовательский ввод
-t1 = ARGV[0].to_i
-t2 = ARGV[1].to_i
+t1, t2 = ARGV[0].to_i, ARGV[1].to_i
 
 #Подсчеты
 time = t1 + t2
 
-#Часы
 hours = time / 3600
 time -= hours * 3600
 
-#Минуты
 minutes = time / 60
 time -= minutes * 60
 
-#Секунды
 seconds = time
 
 #Вывод
-case hours
-	when 1
-		print(hours, " час ", minutes, " минут ", seconds, " секунд \n")
-	when 2,3,4
-		print(hours, " часa ", minutes, " минут ", seconds, " секунд \n")
-	else
-		print(hours, " часов ", minutes, " минут ", seconds, " секунд \n")
-end
-
-
-
-
+puts(hour(hours) + min(minutes) + sec(seconds))
 
 
