@@ -2,6 +2,8 @@
 
 def hour(hours)
 	case hours
+		when 0
+			return ""
 		when 1
 			return (hours.to_s + " час ")
 		when 2,3,4
@@ -13,6 +15,8 @@ end
 
 def min(minutes)
 	case minutes
+		when 0
+			return ""
 		when 1
 			return (minutes.to_s + " минута ")
 		when 2,3,4
@@ -24,6 +28,8 @@ end
 
 def sec(seconds)
 	case seconds
+		when 0
+			return ""
 		when 1
 			return (seconds.to_s + " секунда ")
 		when 2,3,4
@@ -50,5 +56,3 @@ seconds = time
 
 #Вывод
 puts(hour(hours) + min(minutes) + sec(seconds))
-
-
